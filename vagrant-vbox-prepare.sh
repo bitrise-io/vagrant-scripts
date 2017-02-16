@@ -37,3 +37,19 @@ chmod 0700 ~/.ssh && chmod 0600 ~/.ssh/authorized_keys
 
 # https://www.vagrantup.com/docs/boxes/base.html : SSH Tweaks
 sudo sh -c 'echo "UseDNS no" >> /etc/ssh/sshd_config'
+
+# --- CLEANUP ---
+sudo apt-get autoremove -y -f
+sudo apt-get clean
+
+# whiteout
+set +e
+sudo dd if=/dev/zero of=/EMPTY bs=1M
+set -e
+sudo rm -f /EMPTY
+
+# clear history
+cat /dev/null > /home/vagrant/.bash_history
+cat /dev/null > /root/.bash_history
+
+history -c
