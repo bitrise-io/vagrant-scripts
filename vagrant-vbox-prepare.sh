@@ -8,7 +8,10 @@
 
 set -ex
 
-VBOX_VER=5.1.14
+if [ -z "${VBOX_VER}" ] ; then
+  echo " [!] VBOX_VER environment variable not provided/set!"
+  exit 1
+fi
 
 sudo apt-get update
 sudo apt-get upgrade -y
