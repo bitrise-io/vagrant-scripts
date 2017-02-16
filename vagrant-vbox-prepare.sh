@@ -50,6 +50,6 @@ sudo rm -f /EMPTY
 
 # clear history
 cat /dev/null > /home/vagrant/.bash_history
-cat /dev/null > /root/.bash_history
+sudo sh -c 'cat /dev/null > /root/.bash_history'
 
 history -c
