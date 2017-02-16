@@ -10,7 +10,9 @@ set -ex
 
 VBOX_VER=5.1.14
 
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms
 
 sudo sh -c 'echo >> /etc/sudoers'
